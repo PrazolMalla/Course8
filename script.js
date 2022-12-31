@@ -49,6 +49,43 @@ const restaurant = {
   },
 };
 
+//? Nullish
+restaurant.numGuests = 0;
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+const guests1 = restaurant.numGuests ?? 10;
+console.log(guests1);
+// ! Use Any data type,return Any data type ,short-circuiting
+/*
+console.log('---OR----');
+
+
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+console.log('---AND---');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log('Hello' && 23 && null && 'jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPasta('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
 //? Destructuring Object
 /*
 restaurant.orderDelivery({
@@ -157,7 +194,10 @@ const ingredients = [
   // prompt("Let's make pasta! Ingredients 2?"),
   // prompt("Let's make pasta! Ingredients 3?"),
 ];
+*/
+// ? rest pattern
 
+/*
 console.log(ingredients);
 
 restaurant.orderPasta(...ingredients);
@@ -174,6 +214,7 @@ console.log(restaurantCopy.name);
 console.log(restaurant.name);
 */
 
+/*
 //Spread ,because on right side of =
 const arr = [1, 2, ...[3, 4]];
 //REST ,because on left side of =
@@ -211,3 +252,4 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+*/
