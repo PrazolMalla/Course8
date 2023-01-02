@@ -51,10 +51,107 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+//? coding challenge 2
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+for (const [goalIndex, scorer] of game.scored.entries()) {
+  console.log(`Goal ${goalIndex + 1}:${scorer}`);
+}
+
+const scorer = {};
+for (const [goalIndex, score] of game.scored.entries()) {
+  scorer[score] ? scorer[score]++ : (scorer[score] = 1);
+}
+
+console.log(scorer);
+const odds = Object.values(game.odds);
+let total = 0;
+for (const odd of odds) {
+  total += odd;
+}
+const avg = total / odds.length;
+console.log(avg);
+
+const oddEntries = Object.entries(game.odds);
+console.log(oddEntries);
+
+for (const [team, odd] of oddEntries) {
+  const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} : ${odd}`);
+}
+
+// for(const [key])
+//? looping objects
+
+/*
+//Property Names
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days`;
+for (const day of properties) {
+  openStr += ` ${day}`;
+}
+
+console.log(openStr);
+
+// Property Values
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+*/
 //? optional chaining
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
-
+/*
 console.log(restaurant.openingHours.mon?.open);
 console.log(restaurant.openingHours?.mon?.open);
 
@@ -77,6 +174,7 @@ console.log(restaurant.prazol?.(0, 1) ?? "Method doesn't exist");
 const users = [];
 
 console.log(users[0]?.name ?? 'User donot exist');
+*/
 // ? for of loop
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
