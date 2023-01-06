@@ -52,7 +52,72 @@ const restaurant = {
   },
 };
 
+//?
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze,Italy');
+console.log(rest.set(2, 'Kathmandu'));
+
+rest
+  .set('categories', [
+    'Focaccia',
+    'Bruschetta',
+    'Garlic Bread',
+    'Caprese Salad',
+  ])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open:D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+//? Sets
+
+const time = 21;
+console.log(rest.get(time > rest.get(open) && time < rest.get(close)));
+
+console.log(rest.has('Categories'));
+rest.delete(2);
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
+/*
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+console.log(new Set('Jonas'));
+console.log(orderSet.size);
+orderSet.delete('Risotto');
+orderSet.add('Garlic Bread');
+
+for (const order of orderSet) console.log(order);
+
+//Example
+const staff = [
+  'Waiter',
+  'chef',
+  'Waiter',
+  'Manager',
+  'Manager',
+  'Chef',
+  'Waiter',
+];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+*/
 //? coding challenge 2
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -119,7 +184,7 @@ for (const [team, odd] of oddEntries) {
   const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;
   console.log(`Odd of ${teamStr} : ${odd}`);
 }
-
+*/
 // for(const [key])
 //? looping objects
 
