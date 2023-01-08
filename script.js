@@ -52,7 +52,105 @@ const restaurant = {
   },
 };
 
+//? Strings
+
+/*
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+
+const checkMiddleSeat = function (seat) {
+  //B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😭');
+  else console.log('You got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+*/
+//?String methods
+const airline = 'TAP Air Portugal';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Fix capitalization in name
+
+const capitalization = function (passenger) {
+  const passengerLower = passenger.toLowerCase();
+  const passengerCorrect = passenger[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengerCorrect);
+};
+
+capitalization('PraZOL');
+
+//Ccmparing emails
+
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io\n';
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+//replacing
+
+const priceGB = '288,97#';
+const priceUS = priceGB.replace('#', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 24 , Boarding door 24';
+
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part od New Airbus plane');
+}
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed ');
+  } else {
+    console.log('Welcome');
+  }
+};
+
+checkBaggage('I have a laptop,some Food and pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
 //? coding challenge 3
+/*
 
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
@@ -81,9 +179,9 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}:${event}`);
 }
-
+*/
 //? maps
-
+/*
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze,Italy');
@@ -102,8 +200,9 @@ rest
   .set(false, 'We are closed :(');
 
 console.log(rest.get('name'));
+*/
 //? Sets
-
+/*
 const time = 21;
 console.log(rest.get(time > rest.get(open) && time < rest.get(close)));
 
