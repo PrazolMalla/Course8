@@ -89,6 +89,8 @@ checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 */
 //?String methods
+
+/*
 const airline = 'TAP Air Portugal';
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
@@ -149,6 +151,71 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop,some Food and pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+*/
+//? split and join
+/*
+console.log('a+very+nice+string'.split('+'));
+console.log('Prazol Malla'.split(''));
+
+const [firstName, lastName] = 'Prazol Malla'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitalizeName('jessica ann smith davis');
+capitalizeName('prazol malla');
+
+//Padding
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Prazol'.padStart(25, '+'));
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  console.log(str);
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(433336675666777));
+console.log(maskCreditCard('56954869856496894684566'));
+
+//repeat
+const message2 = 'Bad Weather ';
+console.log(message2.repeat(5));
+*/
+
+//? coding challenge 4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const textarea = document.querySelector('textarea').value;
+  const variableList = textarea.split('\n');
+  // console.log(variableList);
+  for (const [i, n] of variableList.entries()) {
+    const [first, second] = n.toLowerCase().trim().split('_');
+    // console.log(n, first, second);
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )} `;
+
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+    // i = i + 1;
+  }
+});
+
 //? coding challenge 3
 /*
 
@@ -166,7 +233,7 @@ const gameEvents = new Map([
   [92, '� Yellow card'],
 ]);
 
-const events = [...new Set(gameEvents.values())];
+cconst events = [...new Set(gameEvents.values())];
 console.log(events);
 
 gameEvents.delete(64);
